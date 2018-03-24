@@ -37,7 +37,7 @@ class Modal extends Component{
 					<div>
 						<ModalBack handleClose={this.props.handleClose}>
 						<div className = "Modal">
-							test1
+							<Report/>
 						</div>
 						</ModalBack>
 					</div>
