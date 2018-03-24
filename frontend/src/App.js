@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Modal from './Modal.js';
+
 
 class App extends Component {
 	constructor(props){
@@ -34,6 +36,7 @@ class App extends Component {
   		);
   	}
 	
+	//Closes Modal
 	handleClose(event){
 		this.setState((prevState) =>{
 			return {
@@ -43,7 +46,7 @@ class App extends Component {
 		});
 	}
 
-	//Toggles Modal for Reporting
+	//Display Modal for Reporting
 	handleReport(event){
 		this.setState((prevState) =>{
 			return {
@@ -53,7 +56,7 @@ class App extends Component {
 		});
 	}
 
-	//Toggles Modal for Emergency
+	//Display Modal for Emergency
 	handleEmergency(event){
 		this.setState((prevState) =>{
 			return {
@@ -64,60 +67,7 @@ class App extends Component {
 	}
 }
 
-class ModalBack extends Component{
-	constructor(props){
-		super(props);
-		//this.handleClose = this.handleClose.bind()
-	}
 
-	handleClose(event){
-		if(event.target.className === "ModalBack"){	//Close it
-			this.props.handleClose(event);
-		}
-	}
-
-	render(){
-		return(
-			<div className="ModalBack" onClick={this.handleClose = this.handleClose.bind(this)}>
-				{this.props.children}
-			</div>
-		)
-	}
-}
-
-//Displays Option Pane to interact with
-class Modal extends Component{
- 	render(){
-		if(this.props.enabled){ 
-			if(this.props.type === "Emergency"){
-				return(
-					<div>
-						<ModalBack handleClose={this.props.handleClose}>
-						<div className = "Modal">
-							test2
-						</div>
-						</ModalBack>
-					</div>
-				)
-			}else if(this.props.type === "Report"){
-				return(
-					<div>
-						<ModalBack handleClose={this.props.handleClose}>
-						<div className = "Modal">
-							test1
-						</div>
-						</ModalBack>
-					</div>
-				);
-			}
-		}
-		return(//None
-			<div>
-
-			</div>
-		);		
-	}
-}
 
 class Map extends Component{
 	render(){
