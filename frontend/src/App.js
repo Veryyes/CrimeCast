@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Modal from './Modal.js';
 
-
 class App extends Component {
 	constructor(props){
 		super(props);
@@ -23,7 +22,6 @@ class App extends Component {
 				<Header/>
 				<Map/>		
 				<Modal type={this.state.currModal} enabled={this.state.on} handleClose={this.handleClose}/>
-
 				<button onClick={this.handleReport}>
 					Report
 				</button>

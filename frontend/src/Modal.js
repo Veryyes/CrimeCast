@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
+import Report from './Report.js';
+import Emergency from './Emergency.js';
 
 class ModalBack extends Component{
-	constructor(props){
-		super(props);
-		//this.handleClose = this.handleClose.bind()
-	}
-
 	handleClose(event){
 		if(event.target.className === "ModalBack"){	//Close it
 			this.props.handleClose(event);
@@ -30,7 +27,7 @@ class Modal extends Component{
 					<div>
 						<ModalBack handleClose={this.props.handleClose}>
 						<div className = "Modal">
-							test2
+							<Emergency/>
 						</div>
 						</ModalBack>
 					</div>
@@ -49,7 +46,7 @@ class Modal extends Component{
 		}
 		return(//None
 			<div>
-
+			
 			</div>
 		);		
 	}
