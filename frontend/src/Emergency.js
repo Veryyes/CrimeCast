@@ -46,6 +46,7 @@ class Emergency extends Component{
 
 	handleClick(event){
 		console.log(this.state)
+
 	}
 }
 
