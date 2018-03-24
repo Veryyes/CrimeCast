@@ -12,6 +12,7 @@ class App extends Component {
 		}
 		this.handleReport = this.handleReport.bind(this);
 		this.handleEmergency = this.handleEmergency.bind(this);
+		this.handleClose = this.handleClose.bind(this);
 	}
 
 	render() {
@@ -19,24 +20,35 @@ class App extends Component {
 			<div className="App">
 				<Header/>
 				<Map/>		
-				<Modal type={this.state.currModal} enabled={this.state.on}/>
+				<Modal type={this.state.currModal} enabled={this.state.on} handleClose={this.handleClose}/>
+
 				<button onClick={this.handleReport}>
 					Report
 				</button>
 				<button onClick={this.handleEmergency}>
 					Emergency
 				</button>
+
 				<Footer/>
       		</div>
   		);
   	}
 	
+	handleClose(event){
+		this.setState((prevState) =>{
+			return {
+				currModal: "None",
+				on:false
+			}
+		});
+	}
+
 	//Toggles Modal for Reporting
 	handleReport(event){
 		this.setState((prevState) =>{
 			return {
-					currModal: "Report",
-					on:true
+				currModal: "Report",
+				on:true
 			}
 		});
 	}
@@ -45,18 +57,29 @@ class App extends Component {
 	handleEmergency(event){
 		this.setState((prevState) =>{
 			return {
-					currModal: "Emergency",
-					on:true
+				currModal: "Emergency",
+				on:true
 			}
 		});
 	}
 }
 
 class ModalBack extends Component{
+	constructor(props){
+		super(props);
+		//this.handleClose = this.handleClose.bind()
+	}
+
+	handleClose(event){
+		if(event.target.className === "ModalBack"){	//Close it
+			this.props.handleClose(event);
+		}
+	}
+
 	render(){
 		return(
-			<div className="ModalBack">
-
+			<div className="ModalBack" onClick={this.handleClose = this.handleClose.bind(this)}>
+				{this.props.children}
 			</div>
 		)
 	}
@@ -69,19 +92,21 @@ class Modal extends Component{
 			if(this.props.type === "Emergency"){
 				return(
 					<div>
-						<ModalBack/>
+						<ModalBack handleClose={this.props.handleClose}>
 						<div className = "Modal">
 							test2
 						</div>
+						</ModalBack>
 					</div>
 				)
 			}else if(this.props.type === "Report"){
 				return(
 					<div>
-						<ModalBack/>
+						<ModalBack handleClose={this.props.handleClose}>
 						<div className = "Modal">
 							test1
 						</div>
+						</ModalBack>
 					</div>
 				);
 			}
