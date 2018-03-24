@@ -18,10 +18,14 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header/>
-				<Map/>
-				<ModalBack>
-					<Modal type={this.state.currModal} enabled={this.state.on}/>
-				</ModalBack>
+				<Map/>		
+				<Modal type={this.state.currModal} enabled={this.state.on}/>
+				<button onClick={this.handleReport}>
+					Report
+				</button>
+				<button onClick={this.handleEmergency}>
+					Emergency
+				</button>
 				<Footer/>
       		</div>
   		);
@@ -29,47 +33,64 @@ class App extends Component {
 	
 	//Toggles Modal for Reporting
 	handleReport(event){
-
+		this.setState((prevState) =>{
+			return {
+					currModal: "Report",
+					on:true
+			}
+		});
 	}
 
 	//Toggles Modal for Emergency
 	handleEmergency(event){
-
+		this.setState((prevState) =>{
+			return {
+					currModal: "Emergency",
+					on:true
+			}
+		});
 	}
 }
 
 class ModalBack extends Component{
-	render(){	
+	render(){
 		return(
-			<div>
+			<div className="ModalBack">
 
 			</div>
-		);
+		)
 	}
 }
 
 //Displays Option Pane to interact with
 class Modal extends Component{
  	render(){
-		if(this.props.type === "Emergency"){
-			return(
-				<div className = "Modal">
-					
-				</div>
-			)
-		}else if(this.props.type === "Report"){
-			return(
-				<div className = "Modal">
-
-				</div>
-			);
-		}else{ //None
-			return(
-				<div className = "Modal">
-
-				</div>
-			);
+		if(this.props.enabled){ 
+			if(this.props.type === "Emergency"){
+				return(
+					<div>
+						<ModalBack/>
+						<div className = "Modal">
+							test2
+						</div>
+					</div>
+				)
+			}else if(this.props.type === "Report"){
+				return(
+					<div>
+						<ModalBack/>
+						<div className = "Modal">
+							test1
+						</div>
+					</div>
+				);
+			}
 		}
+		return(//None
+			<div>
+
+			</div>
+		);		
 	}
 }
 
