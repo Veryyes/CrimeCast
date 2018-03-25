@@ -5,12 +5,26 @@
   "dependencies": {
     "googlemaps": "^1.12.0",
     "markerclustererplus": "^2.1.4",
+<<<<<<< HEAD
     "materialize-css": "^1.0.0-beta",
+=======
+    "mysql": "^2.15.0",
+    "net": "^1.0.2",
+>>>>>>> a2ef8645af8ea173ca7a917cad31fcc84d731af4
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-geolocated": "^2.3.0",
+    "react-geolocation": "^1.0.3",
     "react-google-maps": "^9.4.5",
+<<<<<<< HEAD
     "react-materialize": "^2.1.2",
     "react-scripts": "1.1.1"
+=======
+    "react-scripts": "1.1.1",
+    "spotcrime": "^1.0.1",
+    "sql": "^0.78.0",
+    "unirest": "^0.5.1"
+>>>>>>> a2ef8645af8ea173ca7a917cad31fcc84d731af4
   },
   "scripts": {
     "start": "react-scripts start",

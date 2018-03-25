@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import {  withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 //const { MarkerClusterer } = require("react-google-maps/lib/components/addons/MarkerClusterer");
 import {MarkerClusterer} from "react-google-maps/lib/components/addons/MarkerClusterer"
 import {MarkerWithLabel} from "react-google-maps/lib/components/addons/MarkerWithLabel"
 import {Button, Icon, Navbar, NavItem} from 'react-materialize'
+=======
+>>>>>>> a2ef8645af8ea173ca7a917cad31fcc84d731af4
 import './App.css';
 import Modal from './Modal.js';
+import Map from './Map.js';
+
+/*
+var mysql = require('mysql');
+console.log(mysql);
+var con = mysql.createConnection({
+	host: "35.231.114.23",
+	user: "crimecast",
+	password: "badboi",
+	database: "crime"
+});
+*/
+
+/*var unirest = require('unirest');
+var spotcrime = require('spotcrime');*/
 
 class App extends Component {
 	constructor(props){
@@ -70,56 +88,6 @@ class App extends Component {
 }
 
 
-
-class Map extends Component{
-	constructor(props){
-		super(props);
-		this.state = {
-			markers: [
-				{lat:38,lng:-78, descript:"Property Damage"},
-				{lat:37,lng:-77, descript:"Robbery"},
-			]
-		}
-		this.handleMarkerClick = this.handleMarkerClick.bind(this);
-	}
-//	{props.isMarkerShown && <Marker position={{ lat: 38.0316816, lng: -78.5135989 }} />}
-
-	handleMarkerClick(marker){
-		
-	}
-
-	render(){
-		let MyMapComponent = withScriptjs(withGoogleMap((props) =>
-			 <GoogleMap
-   				 defaultZoom={8}
-   				 defaultCenter={{ lat: 38.0316816, lng: -78.5135989 }}>
-				{props.markers.map(marker=>(
-					<MarkerWithLabel
-						position={{lat: marker.lat, lng: marker.lng}}
-						labelAnchor={(0,0)}
-						labelStyle={{backgroundColor: "#000000", color:"#ffffff",fontSize: "12px", padding:"2px"}}
-					>
-						<div>
-							{marker.descript}
-						</div>
-					</MarkerWithLabel>
-				))}
-  			</GoogleMap>
-		));
-		return(
-			<div className="Map">  
-    		<MyMapComponent 
-				isMarkerShown 
-				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQAsVsOK3RIivTBZpb0JpED65vUUZIAzo&v=3.exp&libraries=geometry,drawing,places"
- 				loadingElement={<div style={{ height: `100%` }} />}
-  				containerElement={<div style={{ height: `400px` }} />}
-  				mapElement={<div style={{ height: `100%` }} />}
-				markers={this.state.markers}
-			/>	
-			</div>
-		);
-	}
-}
 
 class Header extends Component{
 	render(){
