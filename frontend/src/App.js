@@ -43,10 +43,10 @@ class App extends Component {
 				<Map/>
 				<br/>
 				<Modal type={this.state.currModal} enabled={this.state.on} handleClose={this.handleClose}/>
-				<Button large waves='light' onClick={this.handleReport}>
+				<Button s={6} waves='teal' onClick={this.handleReport}>
 					Report
 				</Button>
-				<Button large waves='light' onClick={this.handleEmergency}>
+				<Button s={6} waves='teal' onClick={this.handleEmergency}>
 					Emergency
 				</Button>
 				<Footer/>

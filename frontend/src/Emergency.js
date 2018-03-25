@@ -16,19 +16,15 @@ class Emergency extends Component{
 	render(){
 		return(
 			<div className="Emergency">
-				What is your Emergency?
-				<div className="Emergency_Choices">
-					<label>Police</label>
-					<input name="police" type="checkbox" onChange={this.handleChange} checked={this.state.police}/>
-					<br/>
-					<label>Fire Dept.</label>
-					<input name="fire" type="checkbox" onChange={this.handleChange} checked={this.state.fire}/>
-					<br/>
-					<label>Medical Services</label>
-					<input name="med" type="checkbox" onChange={this.handleChange} checked={this.state.med}/>
-				</div>
-
-				<Button large onClick={this.handleClick = this.handleClick.bind(this)}>
+				<h4> What is your Emergency? </h4>
+				<div class="divider"></div>
+				<br/>
+				<Row className="Emergency_Choices">
+					<Input name="police" type="checkbox" label="Police" s={4} onChange={this.handleChange} checked={this.state.police}/>
+					<Input name="med" type="checkbox" label="Medical Services" s={4} onChange={this.handleChange} checked={this.state.med}/>
+					<Input name="fire" type="checkbox" label="Fire Dept." s={4} onChange={this.handleChange} checked={this.state.fire}/>
+				</Row>
+				<Button s={6} onClick={this.handleClick = this.handleClick.bind(this)}>
 					Call for Help
 				</Button>
 			</div>
