@@ -7,7 +7,8 @@ class Emergency extends Component{
 		this.state = {
 			police: true,
 			fire: false,
-			med: false
+			med: false,
+			buttontext: "Call for Help" 
 		}
 		this.handleChange = this.handleChange.bind(this);
 		this.handleClick = this.handleClick.bind(this);
@@ -25,7 +26,7 @@ class Emergency extends Component{
 					<Input name="fire" type="checkbox" label="Fire Dept." s={4} onChange={this.handleChange} checked={this.state.fire}/>
 				</Row>
 				<Button s={6} onClick={this.handleClick = this.handleClick.bind(this)}>
-					Call for Help
+					{this.state.buttontext}
 				</Button>
 			</div>
 		);
@@ -42,7 +43,24 @@ class Emergency extends Component{
 	}
 
 	handleClick(event){
-		console.log(this.state)
+		let lat = 38.0316816
+        let lng = -78.5135989
+		fetch("http://localhost:8080/help?lat="+lat+"&lng="+lng+"&police="+this.state.police+"&fire="+this.state.fire+"&med="+this.state.med, {
+			method: "GET",
+			headers:{
+				Accept: "application/json",
+				"Content-Type": "application/json"
+			}
+		}).then((response)=>{
+			return(response);
+		}).then((response)=>{
+			console.log(response)
+			this.setState((prevState)=>{
+				return{
+					buttontext: "Call Send!"
+				}
+			});
+		});
 
 	}
 }
