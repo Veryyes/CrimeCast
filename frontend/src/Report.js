@@ -5,36 +5,38 @@ class Report extends Component{
 	render(){
 		return(
 			<div className="Report">
-				Report a Crime
+				<h4> Report a Crime </h4>
+				<div class="divider"></div>
+				<br/>
 				<Row>
 					<Col s={6} className='button'>
-						<Button large>
-							Larceny	
-						</Button>
-					</Col>
-					<Col s={6} className='button'>
-						<Button large>
-							Buglary
-						</Button>
-					</Col>
-					<Col s={6} className='button'>
-						<Button large>
-							Assualt
-						</Button>
-					</Col>
-					<Col s={6} className='button'>
-						<Button large>
-							Tresspassing
-						</Button>
-					</Col>
-					<Col s={6} className='button'>
-						<Button large>
+						<Button waves="teal">
 							Drug/Substance abuse
 						</Button>
 					</Col>
 					<Col s={6} className='button'>
-						<Button large>
+						<Button waves="teal">
+							Larceny	
+						</Button>
+					</Col>
+					<Col s={6} className='button'>
+						<Button waves="teal">
 							Property Damage
+						</Button>
+					</Col>
+					<Col s={6} className='button'>
+						<Button waves="teal">
+							Buglary
+						</Button>
+					</Col>
+					<Col s={6} className='button'>
+						<Button waves="teal">
+							Tresspassing
+						</Button>
+					</Col>
+					<Col s={6} className='button'>
+						<Button waves="teal">
+							Assualt
 						</Button>
 					</Col>
 				</Row>
