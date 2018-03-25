@@ -2,20 +2,6 @@ import React, { Component } from 'react';
 import {  withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import {MarkerWithLabel} from "react-google-maps/lib/components/addons/MarkerWithLabel"
 
-/*
-var mysql = require('mysql');
-console.log(mysql);
-var con = mysql.createConnection({
-	host: "35.231.114.23",
-	user: "crimecast",
-	password: "badboi",
-	database: "crime"
-});
-*/
-
-/*var unirest = require('unirest');
-var spotcrime = require('spotcrime');*/
-
 class Map extends Component{
 	constructor(props){
 		super(props);
@@ -24,20 +10,38 @@ class Map extends Component{
 			gps: { //UVA
 				lat: 38.0316816,
 				lng: -78.5135989
-		//		lat: 41.875331,
-		//		lng: -87.678234
 			},
-			markers: [
-			//	{lat:38,lng:-78, descript:"Property Damage"},
-		//		{lat:37,lng:-77, descript:"Robbery"},
-			]
+			markers: []
 		}
 		this.success = this.success.bind(this);
-		//con.connect()
-		//con.query("select * from crime", function(err, res, fields){
-		//if(err)throw err;
-		//console.log(res);
-		//})
+		fetch("http://localhost:8080/all",{
+			method: "GET",
+			headers: {
+				Accept:"application/json",
+				"Content-Type": "application/json"
+			}
+		}).then((response)=>{
+			return response.json()
+		}).then((response)=>{
+			let newMarkers = []
+			for(let i =0; i < response.length; i++){
+				let mark={
+					lat: response[i].lat,
+					lng: response[i].lng,
+					descript: response[i].type
+				}
+			
+				newMarkers.push(mark);
+			}
+			this.setState((prevState)=>{
+				return{
+					markers: newMarkers
+				}
+			});
+			console.log(this.state.markers);
+			this.render();
+		})
+		
 	}
 
 
@@ -82,6 +86,8 @@ class Map extends Component{
 				))}
   			</GoogleMap>
 		));
+
+		
 		return(
 			<div className="Map">  
 			

@@ -28,6 +28,7 @@ app.get('/all', function(req, res){
 		if(err)throw err;
 		res.send(result);
 		console.log("Queryed /all");
+		console.log(result);
 	});
 });
 
