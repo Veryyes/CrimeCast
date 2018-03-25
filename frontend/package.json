@@ -5,9 +5,11 @@
   "dependencies": {
     "googlemaps": "^1.12.0",
     "markerclustererplus": "^2.1.4",
+    "materialize-css": "^1.0.0-beta",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.5",
+    "react-materialize": "^2.1.2",
     "react-scripts": "1.1.1"
   },
   "scripts": {
