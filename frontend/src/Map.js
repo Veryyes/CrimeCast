@@ -14,7 +14,13 @@ class Map extends Component{
 			markers: []
 		}
 		this.success = this.success.bind(this);
-		fetch("http://localhost:8080/all",{
+		this.repoll = this.repoll.bind(this);
+		this.repoll();
+	}
+
+
+	repoll(){
+fetch("http://localhost:8080/all",{
 			method: "GET",
 			headers: {
 				Accept:"application/json",
@@ -39,11 +45,9 @@ class Map extends Component{
 				}
 			});
 			console.log(this.state.markers);
-			this.render();
 		})
-		
-	}
 
+	}
 
 	success(pos){
  	 let crd = pos.coords;
@@ -67,10 +71,10 @@ class Map extends Component{
  			timeout: 5000,
  			maximumAge: 0
 		};
-		navigator.geolocation.getCurrentPosition(this.success,this.error, options);
+		//navigator.geolocation.getCurrentPosition(this.success,this.error, options);
 		let MyMapComponent = withScriptjs(withGoogleMap((props) =>
 			 <GoogleMap
-   				 defaultZoom={8}
+   				 defaultZoom={14}
    				 defaultCenter={{ lat: this.state.gps.lat, lng: this.state.gps.lng }}>
 				{props.isMarkerShown && <Marker position={{ lat: this.state.gps.lat, lng: this.state.gps.lng  }} />}
 				{props.markers.map(marker=>(

@@ -29,11 +29,13 @@ class App extends Component {
 			//Current Type of modal
 			currModal: "None", //Report || Emergency
 			//Display or not?
-			on: false
+			on: false,
+			toggle: true
 		}
 		this.handleReport = this.handleReport.bind(this);
 		this.handleEmergency = this.handleEmergency.bind(this);
 		this.handleClose = this.handleClose.bind(this);
+		this.renderHelper = this.renderHelper.bind(this);
 	}
 
 	render() {
@@ -42,7 +44,7 @@ class App extends Component {
 				<Header/>
 				<Map/>
 				<br/>
-				<Modal type={this.state.currModal} enabled={this.state.on} handleClose={this.handleClose}/>
+				<Modal type={this.state.currModal} enabled={this.state.on} handleClose={this.handleClose} updateMap={this.renderHelper}/>
 				<Button s={6} waves='teal' onClick={this.handleReport}>
 					Report
 				</Button>
@@ -53,6 +55,14 @@ class App extends Component {
       		</div>
   		);
   	}
+
+	renderHelper(){
+		this.setState((prevState) =>{
+			return{
+				toggle: !this.state.toggle
+			}
+		})
+	}
 	
 	//Closes Modal
 	handleClose(event){
