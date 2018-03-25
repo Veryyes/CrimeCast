@@ -42,7 +42,10 @@ app.get('/report', function(req,res){
 		database: "crime"
 	});
 	con.connect();
-	con.query("insert into crime values(now(), "+query.lat+"," +query.lng +","+ query.type+ ")", function(err, result, fields){
+	let qstring = "insert into crime values(now(), "+query.lat+"," +query.lng +",\""+ query.type+ "\")";
+	console.log(qstring);
+
+	con.query(qstring, function(err, result, fields){
 		if(err)throw err;
 		console.log("Added into DB:");
 		console.log(query);
