@@ -1,39 +1,46 @@
 import React, { Component } from 'react';
-import {Button} from 'react-materialize'
+import {Button, Row, Col} from 'react-materialize'
 
 class Report extends Component{
 	render(){
 		return(
 			<div className="Report">
 				Report a Crime
-				<div>
-					<Button>
-					Larceny	
-					</Button>
-
-					<Button>
-					Buglary
-					</Button>
-
-					<Button>
-					Assualt
-					</Button>
-
-					<Button>
-					Tresspassing
-					</Button>
-
-					<Button>
-					Drug/Substance abuse
-					</Button>
-
-					<Button>
-					Property Damage
-					</Button>
-				</div>
+				<Row>
+					<Col s={6} className='button'>
+						<Button large>
+							Larceny	
+						</Button>
+					</Col>
+					<Col s={6} className='button'>
+						<Button large>
+							Buglary
+						</Button>
+					</Col>
+					<Col s={6} className='button'>
+						<Button large>
+							Assualt
+						</Button>
+					</Col>
+					<Col s={6} className='button'>
+						<Button large>
+							Tresspassing
+						</Button>
+					</Col>
+					<Col s={6} className='button'>
+						<Button large>
+							Drug/Substance abuse
+						</Button>
+					</Col>
+					<Col s={6} className='button'>
+						<Button large>
+							Property Damage
+						</Button>
+					</Col>
+				</Row>
 				<br/>
 				<div>
-					<Button>
+					<Button large>
 						Report
 					</Button>
 				</div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, Input} from 'react-materialize'
+import {Button, Input, Row} from 'react-materialize'
 
 class Emergency extends Component{
 	constructor(props){
@@ -28,7 +28,7 @@ class Emergency extends Component{
 					<input name="med" type="checkbox" onChange={this.handleChange} checked={this.state.med}/>
 				</div>
 
-				<Button onClick={this.handleClick = this.handleClick.bind(this)}>
+				<Button large onClick={this.handleClick = this.handleClick.bind(this)}>
 					Call for Help
 				</Button>
 			</div>

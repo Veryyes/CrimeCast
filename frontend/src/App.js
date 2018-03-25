@@ -41,11 +41,12 @@ class App extends Component {
 			<div className="App">
 				<Header/>
 				<Map/>
+				<br/>
 				<Modal type={this.state.currModal} enabled={this.state.on} handleClose={this.handleClose}/>
-				<Button waves='light' onClick={this.handleReport}>
+				<Button large waves='light' onClick={this.handleReport}>
 					Report
 				</Button>
-				<Button waves='light' onClick={this.handleEmergency}>
+				<Button large waves='light' onClick={this.handleEmergency}>
 					Emergency
 				</Button>
 				<Footer/>
@@ -89,7 +90,7 @@ class App extends Component {
 class Header extends Component{
 	render(){
 		return(
-			<Navbar brand='Crime Cast' right>
+			<Navbar brand="Crime Cast" left>
 			</Navbar>
 		);
 	}
