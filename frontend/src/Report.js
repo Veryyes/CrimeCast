@@ -102,6 +102,7 @@ class Report extends Component{
 							"Content-Type": "application/json"
 						}
 					})
+					window.location.reload(false);
 					this.updateMap();
 					//just get the first
 					console.log("update");
