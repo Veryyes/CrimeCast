@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import {  withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 //const { MarkerClusterer } = require("react-google-maps/lib/components/addons/MarkerClusterer");
 import {MarkerClusterer} from "react-google-maps/lib/components/addons/MarkerClusterer"
 import {MarkerWithLabel} from "react-google-maps/lib/components/addons/MarkerWithLabel"
 import {Button, Icon, Navbar, NavItem} from 'react-materialize'
-=======
->>>>>>> a2ef8645af8ea173ca7a917cad31fcc84d731af4
 import './App.css';
 import Modal from './Modal.js';
 import Map from './Map.js';
