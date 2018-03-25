@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import {  withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+//const { MarkerClusterer } = require("react-google-maps/lib/components/addons/MarkerClusterer");
+import {MarkerClusterer} from "react-google-maps/lib/components/addons/MarkerClusterer"
+import {MarkerWithLabel} from "react-google-maps/lib/components/addons/MarkerWithLabel"
+import {Button, Icon, Navbar, NavItem} from 'react-materialize'
 import './App.css';
 import Modal from './Modal.js';
 import Map from './Map.js';
@@ -35,15 +40,14 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header/>
-				<Map/>		
+				<Map/>
 				<Modal type={this.state.currModal} enabled={this.state.on} handleClose={this.handleClose}/>
-				<button onClick={this.handleReport}>
+				<Button waves='light' onClick={this.handleReport}>
 					Report
-				</button>
-				<button onClick={this.handleEmergency}>
+				</Button>
+				<Button waves='light' onClick={this.handleEmergency}>
 					Emergency
-				</button>
-
+				</Button>
 				<Footer/>
       		</div>
   		);
@@ -85,10 +89,8 @@ class App extends Component {
 class Header extends Component{
 	render(){
 		return(
-			<div className="Header">
-				<h1>Crime Cast</h1>
-			
-			</div>
+			<Navbar brand='Crime Cast' right>
+			</Navbar>
 		);
 	}
 }
@@ -96,9 +98,19 @@ class Header extends Component{
 class Footer extends Component{
 	render(){
 		return(
-			<div className="Footer">
-				Brandon Wong, Naman Singh, Jason Kang, Yash Jain © 2018
-			</div>
+			<footer class="page-footer">
+				<div class="container">
+					<div class="row">
+						<h5 class="white-text">Created By</h5>
+						<p class="grey-text text-lighten-4">Brandon Wong, Naman Singh, Jason Kang, Yash Jain.</p>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+					© 2018
+					</div>
+				</div>
+			</footer>
 		);
 	}
 }

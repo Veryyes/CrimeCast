@@ -5,6 +5,7 @@
   "dependencies": {
     "googlemaps": "^1.12.0",
     "markerclustererplus": "^2.1.4",
+    "materialize-css": "^1.0.0-beta",
     "mysql": "^2.15.0",
     "net": "^1.0.2",
     "react": "^16.2.0",
@@ -12,6 +13,8 @@
     "react-geolocated": "^2.3.0",
     "react-geolocation": "^1.0.3",
     "react-google-maps": "^9.4.5",
+    "react-materialize": "^2.1.2",
+    "react-scripts": "1.1.1",
     "react-scripts": "1.1.1",
     "request": "^2.85.0",
     "spotcrime": "^1.0.1",

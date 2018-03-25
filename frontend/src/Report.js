@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Button} from 'react-materialize'
 
 class Report extends Component{
 	render(){
@@ -6,34 +7,35 @@ class Report extends Component{
 			<div className="Report">
 				Report a Crime
 				<div>
-					<button>
+					<Button>
 					Larceny	
-					</button>
+					</Button>
 
-					<button>
+					<Button>
 					Buglary
-					</button>
+					</Button>
 
-					<button>
+					<Button>
 					Assualt
-					</button>
+					</Button>
 
-					<button>
+					<Button>
 					Tresspassing
-					</button>
+					</Button>
 
-					<button>
+					<Button>
 					Drug/Substance abuse
-					</button>
+					</Button>
 
-					<button>
+					<Button>
 					Property Damage
-					</button>
+					</Button>
 				</div>
+				<br/>
 				<div>
-					<button>
+					<Button>
 						Report
-					</button>
+					</Button>
 				</div>
 			</div>
 		)
